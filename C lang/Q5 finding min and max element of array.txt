@@ -1,0 +1,37 @@
+// Finding the Largest and Smallest number from the Linear Array
+#include <stdio.h>
+
+int main()
+{
+// Creating Array
+    
+    int n;
+    printf("Enter the size of array: ");
+    scanf("%d",&n);
+    int array[n];
+    printf("Enter the elements of array\n");
+    for (int i=0;i<n;i++){
+        printf("element at index %d: ",i);
+        scanf("%d",&array[i]);
+    }
+    
+// Finding the max term
+
+   int max=array[0];
+   for(int i=1;i<n;i++){
+       if (max <array[i]){
+           max = array[i];
+       }
+   }
+   
+// Finding min term
+   int min=array[0];
+   for(int i=1;i<n;i++){
+       if (array[i]<min){
+           min = array[i];
+       }
+   }
+   printf("Max term is %d\n",max);
+   printf("Min term is %d\n",min);
+   return 0;
+}

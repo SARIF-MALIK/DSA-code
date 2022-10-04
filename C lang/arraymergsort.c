@@ -1,0 +1,71 @@
+#include <stdio.h>
+
+int main()
+{
+// Creating first Array1
+    
+    int n;
+    printf("Enter the size of array1\n");
+    scanf("%d",&n);
+    int array1[n];
+    printf("Enter the elements of array1\n");
+    for (int i=0;i<n;i++){
+        scanf("%d",&array1[i]);
+    }
+    
+// Creating Second Array2
+    
+    int m;
+    printf("Enter the size of array2\n");
+    scanf("%d",&m);
+    int array2[m];
+    printf("Enter the elements of array2\n");
+    for(int i=0;i<m;i++){
+        scanf("%d",&array2[i]);
+    }
+   
+// Merging two Arrays (Array1 & Array2)
+    
+    // Copying Array1
+    int p = n+m;
+    int array3 [p];
+    for (int i=0;i<n;i++){
+   array3[i] = array1[i];
+   }
+   // merging array2 
+   for (int i=0;i<m;i++){
+   array3[n+i] = array2[i];
+   }
+   
+// Printing Array3
+  printf("Merged array is:                            ");
+  for (int i=0;i<p;i++){
+  printf("\t%d",array3[i]);}
+  printf("\n");
+   
+// Sorting the Array3 Odd first then Even
+   int array4[p],l=0;
+   for(int i=0;i<p;i++){
+   if(array3[i]%2 ==0) {
+   }
+   else {
+       array4[l]=array3[i];
+       l++;
+       array3[i] = 0;
+   }}
+
+  // Taking Even numbers
+  int k=0;
+    for(int i=0;i<p;i++){
+      if(array3[i]!=0){
+          array4[l+k] = array3[i];
+          array3[i] = 0;
+          k++;
+      }
+  }
+
+  // Printing Final Array4
+  printf("Array after sorting Odd first then even is: ");
+    for (int i=0;i<p;i++){
+  printf("\t%d",array4[i]);}
+}
